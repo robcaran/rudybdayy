@@ -1,0 +1,205 @@
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #333;
+    --secondary-color: #666666;
+    --background-color: #fff;
+    --accent-color: #002e5e;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Base Styles */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Layout */
+header, main, footer {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+nav {
+    padding: 1rem 0;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: darken(var(--accent-color), 10%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    header, main, footer {
+        padding: 0.5rem;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modal-content button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #dc3545;
+    margin-bottom: 1rem;
+    min-height: 1.5rem;
+}
+
+/* Hide modal when not needed */
+.modal.hidden {
+    display: none;
+}
+
+/* Birthday content fade-in and color scheme */
+#birthdayContent {
+    opacity: 1;
+    color: #102040; /* dark blue */
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+#birthdayContent h1 {
+    color: #1a4fa3;
+    text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+}
+
+/* Center the birthday content and list */
+#birthdayContent ol {
+    margin: 0 auto;
+    padding-left: 1.2em;
+    width: 100%;
+    max-width: 700px;
+}
+
+@media (max-width: 600px) {
+    #birthdayContent h1 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    #birthdayContent ol {
+        padding-left: 1em;
+        max-width: 98vw;
+        font-size: 1rem;
+        word-break: break-word;
+    }
+    #birthdayContent {
+        padding: 0 0.5em;
+    }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); outline: 2.5px solid rgba(220,53,69,1); filter: blur(0) drop-shadow(0 0 0px rgba(220,53,69,0.5)); }
+  15% { transform: rotate(-3deg); outline: 2.5px solid rgba(220,53,69,0.8); filter: blur(2px) drop-shadow(0 0 8px rgba(220,53,69,0.25)); }
+  30% { transform: rotate(3deg); outline: 2.5px solid rgba(220,53,69,0.7); filter: blur(2px) drop-shadow(0 0 12px rgba(220,53,69,0.18)); }
+  45% { transform: rotate(-2deg); outline: 2.5px solid rgba(220,53,69,0.5); filter: blur(1.5px) drop-shadow(0 0 8px rgba(220,53,69,0.12)); }
+  60% { transform: rotate(2deg); outline: 2.5px solid rgba(220,53,69,0.3); filter: blur(1.5px) drop-shadow(0 0 6px rgba(220,53,69,0.08)); }
+  75% { transform: rotate(-1deg); outline: 2.5px solid rgba(220,53,69,0.1); filter: blur(1px) drop-shadow(0 0 3px rgba(220,53,69,0.04)); }
+  100% { transform: rotate(0deg); outline: 2.5px solid rgba(220,53,69,0); filter: blur(0) drop-shadow(0 0 0px rgba(220,53,69,0)); }
+}
+
+.modal-content.wiggle {
+  animation: wiggle 0.6s cubic-bezier(0.20, 1.2, 0.5, 1) both;
+}
+
+.subtitle {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #406691;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal-prompt {
+    font-size: 0.95rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+} 
